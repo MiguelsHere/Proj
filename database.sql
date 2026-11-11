@@ -22,25 +22,9 @@ CREATE TABLE `user_shelf` (
   `user_shelf_id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `user_id` BIGINT UNSIGNED NOT NULL,
   `book_id` BIGINT UNSIGNED NOT NULL,
-  UNIQUE (`user_id`, `bookstore_id`),
-  `user_feedback` ENUM('liked','disliked','neither') NOT NULL DEFAULT 'neither',
+  `feedback` ENUM("LIKE","DISLIKE","NEITHER") NOT NULL DEFAULT "NEITHER",
+  `comment` TEXT, 
+  UNIQUE (`user_id`, `book_id`),
   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE,
-  FOREIGN KEY (`book_id`) REFERENCES `workout`(`book_id`) ON DELETE CASCADE
-);
-
-CREATE TABLE `bookstore`(
-  `bookstore_id`  BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  `bookstore_name` VARCHAR(100) NOT NULL,
-  `bookstore_description` TEXT,
-  `bookstore_address` VARCHAR(200) NOT NULL,
-);
-
-CREATE TABLE `bookstore_shelf` (
-  `bookstore_shelf_id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  `bookstore_id` BIGINT UNSIGNED NOT NULL,
-  `book_id` BIGINT UNSIGNED NOT NULL,
-  UNIQUE (`user_id`, `bookstore_id`),
-  `book_price` decimal(6,2) NOT NULL,
-  FOREIGN KEY (`bookstore_id`) REFERENCES `bookstore`(`bookstore_id`) ON DELETE CASCADE,
-  FOREIGN KEY (`book_id`) REFERENCES `workout`(`book_id`) ON DELETE CASCADE
+  FOREIGN KEY (`book_id`) REFERENCES `book`(`book_id`) ON DELETE CASCADE
 );
