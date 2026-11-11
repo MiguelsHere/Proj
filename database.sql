@@ -5,7 +5,8 @@ CREATE TABLE `user` (
   `password_hash` VARCHAR(60) NOT NULL,
   `user_description` TEXT,
   `birth_date` DATE,
-  `is_mod` boolean DEFAULT 0,
+  `can_review` boolean NOT NULL DEFAULT 1,
+  `is_admin` boolean NOT NULL DEFAULT 0
 );
 
 CREATE TABLE `book` (
@@ -18,12 +19,12 @@ CREATE TABLE `book` (
   `book_description` TEXT
 );
 
-CREATE TABLE `user_shelf` (
-  `user_shelf_id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE `shelf` (
+  `shelf_id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
   `user_id` BIGINT UNSIGNED NOT NULL,
   `book_id` BIGINT UNSIGNED NOT NULL,
-  `feedback` ENUM("LIKE","DISLIKE","NEITHER") NOT NULL DEFAULT "NEITHER",
-  `comment` TEXT, 
+  `feedback` ENUM("LIKE","DISLIKE","NEITHER"),
+  `review` TEXT,
   UNIQUE (`user_id`, `book_id`),
   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE,
   FOREIGN KEY (`book_id`) REFERENCES `book`(`book_id`) ON DELETE CASCADE
