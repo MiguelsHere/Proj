@@ -14,11 +14,12 @@ $userController = new UserController($db);
 $bookController = new BookController($db);
 $shelfController = new ShelfController($db);
 
-$action = $_GET['action'];
+$action = $_GET['action'] ?? "home";
 
 switch ($action) {
 
     default:
+    case "home":
         $shelfController->listMostLiked();
         break;
 }
