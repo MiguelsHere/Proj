@@ -1,1 +1,1 @@
-<nav></nav>
+<nav><a href="">Entrar</a><span>/</span><a href="">Registar</a></nav>
