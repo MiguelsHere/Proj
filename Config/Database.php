@@ -3,7 +3,7 @@
 class Database
 {
     private $host = "localhost";
-    private $db_name = "booshelf_db";
+    private $db_name = "bookshelf_db";
     private $username = "root";
     private $password = "";
     private $conn = null;

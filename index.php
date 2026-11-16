@@ -10,7 +10,6 @@ include_once 'Controllers/ShelfController.php';
 $database = new Database();
 $db = $database->getConnection();
 
-
 $userController = new UserController($db);
 $bookController = new BookController($db);
 $shelfController = new ShelfController($db);
