@@ -3,7 +3,7 @@
 
 <head>
     <?php require_once 'Views/Common/head.php' ?>
-    <title>Road to Alexandria</title>
+    <title>Bookshelf Review</title>
 </head>
 
 
