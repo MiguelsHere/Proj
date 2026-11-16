@@ -14,7 +14,6 @@ class ShelfController
 
     function listMostLiked()
     {
-
         include 'Views/home.php';
     }
 }
