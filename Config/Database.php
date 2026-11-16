@@ -1,10 +1,23 @@
 <?php
 
-$host = 'localhost';
-$bd   = 'booshelf_db';
-$user = 'root';
-$pass = '';
+class Database
+{
+    private $host = "localhost";
+    private $db_name = "booshelf_db";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-$pdo = new PDO("mysql:host=$host;dbname=$bd;charset=utf8mb4", $user, $pass);
+    public function getConnection()
+    {
+        $this->conn = null;
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name . ";charset=utf8mb4" . $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            print($e->getMessage());
+        }
+        return $this->conn;
+    }
+}

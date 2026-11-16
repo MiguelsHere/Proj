@@ -6,9 +6,9 @@ class User
     function register(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro a registar conta. Tente novamente.";
             return false;
         }
@@ -19,9 +19,9 @@ class User
     function login(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro a entrar na conta. Tente novamente.";
             return false;
         }
@@ -40,9 +40,9 @@ class User
     function get_info(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
@@ -53,9 +53,9 @@ class User
     function update_info(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
@@ -68,9 +68,9 @@ class User
     function update_email(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
@@ -81,9 +81,9 @@ class User
     function update_password(): bool
     {
         try {
-        } catch (Exception $e) {
+        } catch (PDOException $e) {
 
-            print($e);
+            print($e->getMessage());
             $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
