@@ -3,7 +3,7 @@
 
 <head>
     <?php require_once 'Views/Common/head.php' ?>
-    <title>Bookshelf Review</title>
+    <title>Bookshelf Review: Login</title>
 </head>
 
 
