@@ -14,7 +14,7 @@
     <?php require_once 'Views/Commons/alert.php' ?>
 
     <form action="TO-DO" method="post">
-        
+
         <label>Nome de Utilizador:</label>
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" required>
 
@@ -26,6 +26,8 @@
 
         <label>Confirmar Palava-passe</label>
         <input type="password" autocomplete="new-password" minlength="8" required>
+        
+        <input type="checkbox">
 
         <button type="submit">Registar</button>
 
