@@ -1,15 +1,19 @@
 <?php
 
-class Auth
+class User
 {
 
     function register(): bool
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro a registar conta. Tente novamente.";
             return false;
         }
+
+
 
         return true;
     }
@@ -18,9 +22,13 @@ class Auth
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro a entrar na conta. Tente novamente.";
             return false;
         }
+
+
 
         return true;
     }
@@ -29,7 +37,9 @@ class Auth
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
 
@@ -40,7 +50,9 @@ class Auth
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
 
@@ -53,7 +65,9 @@ class Auth
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
 
@@ -64,7 +78,9 @@ class Auth
     {
         try {
         } catch (Exception $e) {
+
             print($e);
+            $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
 

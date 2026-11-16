@@ -5,8 +5,9 @@ CREATE TABLE `user` (
   `password_hash` VARCHAR(60) NOT NULL,
   `user_description` TEXT,
   `birth_date` DATE,
+  `is_public` boolean NOT NULL DEFAULT 1,
   `can_review` boolean NOT NULL DEFAULT 1,
-  `is_admin` boolean NOT NULL DEFAULT 0
+  `is_mod` boolean NOT NULL DEFAULT 0
 );
 
 CREATE TABLE `book` (
