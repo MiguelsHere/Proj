@@ -16,13 +16,13 @@
     <form action="TO-DO" method="post">
 
         <label>Email:</label>
-        <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" required>
+        <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>
 
         <label>Palavra-passe:</label>
-        <input type="password" autocomplete="current-password" minlength="8" required>
+        <input type="password" autocomplete="current-password" minlength="8" id=password name=password required>
 
-        <button type="submit">Registar</button>
-        
+        <button type="submit">Entrar</button>
+
     </form>
 
     <?php require_once 'Views/Common/footer.php' ?>
