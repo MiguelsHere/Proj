@@ -13,8 +13,6 @@ class User
             return false;
         }
 
-
-
         return true;
     }
 
@@ -28,7 +26,13 @@ class User
             return false;
         }
 
+        return true;
+    }
 
+    function logout(): bool
+    {
+        $_SESSION = [];
+        session_destroy();
 
         return true;
     }
