@@ -11,7 +11,7 @@
 <body>
     <?php require_once 'Views/Common/nav.php' ?>
 
-    <?php require_once 'Views/Commons/alert.php' ?>
+    <?php require_once 'Views/Common/alert.php' ?>
 
     <form action="index.php?action=register" method="post">
 
