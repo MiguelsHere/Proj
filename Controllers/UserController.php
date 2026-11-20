@@ -62,7 +62,7 @@ class UserController
     {
         if ($this->isLoggedIn()) {
             $this->user->logout();
-            header("Location: index.php");
         }
+        header("Location: index.php");
     }
 }

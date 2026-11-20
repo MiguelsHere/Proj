@@ -17,7 +17,15 @@ $shelfController = new ShelfController($db);
 $action = $_GET['action'] ?? "home";
 
 switch ($action) {
-
+    case "logout":
+        $userController->logOut();
+        break;
+    case "login":
+        $userController->login();
+        break;
+    case "register":
+        $userController->register();
+        break;
     default:
     case "home":
         $shelfController->listMostLiked();
