@@ -25,7 +25,7 @@ class UserController
         if ($this->isLoggedIn()) {
             header("Location: index.php");
             exit;
-        };
+        }
 
         if ($_POST) {
             if ($this->user->register(trim($_POST['user_name']), trim($_POST['email']), $_POST['password'])) {
@@ -44,14 +44,14 @@ class UserController
         if ($this->isLoggedIn()) {
             header("Location: index.php");
             exit;
-        };
+        }
 
         if ($_POST) {
             if ($this->user->login(trim($_POST['email']), $_POST['password'])) {
-                header("Location: index.php?action=login");
+                header("Location: index.php?action=profile");
                 exit;
             }
-            header("Location: index.php?action=register");
+            header("Location: index.php?action=login");
             exit;
         }
 
