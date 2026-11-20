@@ -48,6 +48,7 @@ class User
 
             if ($row && password_verify($password, $row['password_hash'])) {
                 session_regenerate_id(true);
+                $_SESSION = [];
                 $_SESSION['user_id']   = (int) $row['user_id'];
                 $_SESSION['user_name'] = $row['user_name'];
             } else {
