@@ -27,6 +27,7 @@ CREATE TABLE `shelf` (
   `feedback` ENUM("LIKE","DISLIKE","NEITHER"),
   `review` TEXT,
   `is_favorite` boolean NOT NULL DEFAULT 0,
+  `profile_favorite` boolean NOT NULL DEFAULT 0,
   `user_category` VARCHAR(100),
   UNIQUE (`user_id`, `book_id`),
   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE,
