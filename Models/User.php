@@ -65,12 +65,10 @@ class User
         return true;
     }
 
-    function logout(): bool
+    function logout()
     {
         $_SESSION = [];
         session_destroy();
-
-        return true;
     }
 
     //TO-DO
