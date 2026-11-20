@@ -51,4 +51,13 @@ class UserController
 
         include 'Views/User/login.php';
     }
+
+    public function logOut()
+    {
+        $this->isLoggedIn();
+
+        if ($this->user->logout()) {
+            header("Location: index.php");
+        }
+    }
 }
