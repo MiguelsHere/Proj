@@ -1,3 +1,11 @@
 <?php
 
-class Book {}
+class Book
+{
+    private $conn;
+
+    public function __construct($db)
+    {
+        $this->conn = $db;
+    }
+}

@@ -1,3 +1,11 @@
 <?php
 
-class Shelf {}
+class Shelf
+{
+    private $conn;
+
+    public function __construct($db)
+    {
+        $this->conn = $db;
+    }
+}
