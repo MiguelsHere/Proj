@@ -73,9 +73,14 @@ class User
 
     //TO-DO
 
-    function get_info(): bool
+    function get_info(string $name): bool
     {
         try {
+            if ($name == $_SESSION['user_name']) {
+
+            } else {
+                
+            }
         } catch (PDOException $e) {
 
             print($e->getMessage());
@@ -86,7 +91,7 @@ class User
         return true;
     }
 
-    function update_info(): bool
+    function update_info(string $description, string $birth, bool $public): bool
     {
         try {
         } catch (PDOException $e) {
@@ -101,7 +106,7 @@ class User
 
     //Estas vão precisar de password para mudar
 
-    function update_email(): bool
+    function update_email(string $email, string $password): bool
     {
         try {
         } catch (PDOException $e) {
@@ -114,7 +119,7 @@ class User
         return true;
     }
 
-    function update_password(): bool
+    function update_password(string $newpassword, string $password): bool
     {
         try {
         } catch (PDOException $e) {

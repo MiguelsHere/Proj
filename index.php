@@ -18,7 +18,7 @@ $action = $_GET['action'] ?? "home";
 
 switch ($action) {
     case "logout":
-        $userController->logOut();
+        $userController->logout();
         break;
     case "login":
         $userController->login();
@@ -28,6 +28,6 @@ switch ($action) {
         break;
     default:
     case "home":
-        $shelfController->listMostLiked();
+        $shelfController->list_most_liked();
         break;
 }

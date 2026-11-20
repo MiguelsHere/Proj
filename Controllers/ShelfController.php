@@ -12,7 +12,7 @@ class ShelfController
         $this->shelf = new Shelf($this->db);
     }
 
-    function listMostLiked()
+    function list_most_liked()
     {
         include 'Views/home.php';
     }

@@ -12,7 +12,7 @@ class UserController
         $this->user = new User($this->db);
     }
 
-    private function isLoggedIn(): bool
+    private function is_logged_in(): bool
     {
         if (!empty($_SESSION['user_id'])) {
             return true;
@@ -22,7 +22,7 @@ class UserController
 
     public function register()
     {
-        if ($this->isLoggedIn()) {
+        if ($this->is_logged_in()) {
             header("Location: index.php");
             exit;
         }
@@ -41,7 +41,7 @@ class UserController
 
     public function login()
     {
-        if ($this->isLoggedIn()) {
+        if ($this->is_logged_in()) {
             header("Location: index.php");
             exit;
         }
@@ -58,9 +58,9 @@ class UserController
         include 'Views/User/login.php';
     }
 
-    public function logOut()
+    public function logout()
     {
-        if ($this->isLoggedIn()) {
+        if ($this->is_logged_in()) {
             $this->user->logout();
         }
         header("Location: index.php");
