@@ -12,7 +12,7 @@
 
     <?php require_once 'Views/Commons/alert.php' ?>
 
-    <form action="TO-DO" method="post">
+    <form action="index.php?action=login" method="post">
 
         <label>Email:</label>
         <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>

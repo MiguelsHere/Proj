@@ -13,7 +13,7 @@
 
     <?php require_once 'Views/Commons/alert.php' ?>
 
-    <form action="TO-DO" method="post">
+    <form action="index.php?action=register" method="post">
 
         <label>Nome de Utilizador:</label>
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required>
