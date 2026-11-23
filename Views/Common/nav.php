@@ -3,7 +3,7 @@
         <a href="index.php?action=login" title="Ir para a página de login">Entrar</a>
         <a href="index.php?action=register" title="Ir para a página de registo">Registar</a>
     <?php else: ?>
-        <a href="index.php?action=profile" title="Ir para a pagina de perfil">Perfil</a>
+        <a href="index.php?action=profile" title="Ir para a pagina de perfil"><?= htmlspecialchars($_SESSION["user_name"]) ?></a>
         <a href="index.php?action=logout">Sair</a>
     <?php endif ?>
 </nav>
