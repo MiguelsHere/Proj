@@ -13,7 +13,11 @@
 
     <?php require_once 'Views/Commons/alert.php' ?>
 
+    <?php 
+    
+    
 
+    ?>
 
     <?php require_once 'Views/Common/footer.php' ?>
 </body>

@@ -71,29 +71,59 @@ class User
         session_destroy();
     }
 
-    //TO-DO
-
-    function get_info(string $name): bool
+    function profile_get_info(string $name)
     {
         try {
-            if ($name == $_SESSION['user_name']) {
 
-            } else {
-                
-            }
+            $query = "SELECT user_name, user_description, birth_date FROM user WHERE user_name = :user_name and is_public = 1";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(":user_name", $name);
+
+            $stmt->execute();
         } catch (PDOException $e) {
 
             print($e->getMessage());
             $_SESSION['alert'] = "Erro. Tente novamente.";
             return false;
         }
-
-        return true;
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function update_info(string $description, string $birth, bool $public): bool
+    function profile_get_info_self()
     {
         try {
+            $query = "SELECT user_name, email, user_description, birth_date, is_public, can_review FROM user WHERE user_id = :user_id";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(":user_id", $_SESSION["user_id"]);
+
+            $stmt->execute();
+        } catch (PDOException $e) {
+
+            print($e->getMessage());
+            $_SESSION['alert'] = "Erro. Tente novamente.";
+            return false;
+        }
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    function profile_update_info(string $description, string $birth, bool $public): bool
+    {
+        try {
+
+            $query = "UPDATE user SET user_description = :user_description, birth_date = :birth_date, is_public = :is_public WHERE user_id = :user_id";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(":user_description", $description);
+            $stmt->bindParam(":birth_date", $birth);
+            $stmt->bindParam(":is_public", $public);
+            $stmt->bindParam(":user_id", $_SESSION['user_id']);
+
+            $stmt->execute();
         } catch (PDOException $e) {
 
             print($e->getMessage());
@@ -106,7 +136,7 @@ class User
 
     //Estas vão precisar de password para mudar
 
-    function update_email(string $email, string $password): bool
+    function profile_update_email(string $email, string $password): bool
     {
         try {
         } catch (PDOException $e) {
@@ -119,7 +149,7 @@ class User
         return true;
     }
 
-    function update_password(string $newpassword, string $password): bool
+    function profile_update_password(string $newpassword, string $password): bool
     {
         try {
         } catch (PDOException $e) {

@@ -65,4 +65,21 @@ class UserController
         }
         header("Location: index.php");
     }
+
+    public function profile(string $name)
+    {
+        if ($name == $_SESSION['user_name']) {
+            $this->user->profile_get_info_self();
+
+            if ($_POST) {
+                $this->user->profile_update_info($_POST['user_description'], $_POST['birth'], $_POST['public']);
+
+                header("Location: index.php?action=profile");
+                exit;
+            }
+        } else {
+            $this->user->profile_get_info($name);
+        }
+        include 'Views/User/profile.php';
+    }
 }
