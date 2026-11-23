@@ -69,7 +69,7 @@ class UserController
     public function profile(string $name)
     {
         if ($name == $_SESSION['user_name']) {
-            $this->user->profile_get_info_self();
+            $info = $this->user->profile_get_info_self();
 
             if ($_POST) {
                 $this->user->profile_update_info($_POST['user_description'], $_POST['birth'], $_POST['public']);
@@ -78,8 +78,9 @@ class UserController
                 exit;
             }
         } else {
-            $this->user->profile_get_info($name);
+            $info = $this->user->profile_get_info($name);
         }
+        
         include 'Views/User/profile.php';
     }
 }
