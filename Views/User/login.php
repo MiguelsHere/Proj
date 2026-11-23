@@ -6,7 +6,6 @@
     <title>Bookshelf Review: Login</title>
 </head>
 
-
 <body>
     <?php require_once 'Views/Common/nav.php' ?>
 
@@ -26,6 +25,5 @@
 
     <?php require_once 'Views/Common/footer.php' ?>
 </body>
-
 
 </html>

@@ -5,7 +5,7 @@ CREATE TABLE `user` (
   `password_hash` VARCHAR(60) NOT NULL,
   `user_description` TEXT,
   `birth_date` DATE,
-  `is_public` boolean NOT NULL DEFAULT 1,
+  `is_public` boolean NOT NULL DEFAULT 0,
   `can_review` boolean NOT NULL DEFAULT 1,
   `is_mod` boolean NOT NULL DEFAULT 0
 );
@@ -28,9 +28,8 @@ CREATE TABLE `shelf` (
   `review_title` VARCHAR(100) NOT NULL, 
   `review` TEXT,
   `is_favorite` boolean NOT NULL DEFAULT 0,
-  `profile_favorite` boolean NOT NULL DEFAULT 0,
-  `reports` BIGINT UNSIGNED NOT NULL DEFAULT 0,
   `user_category` VARCHAR(100),
+  `reports` BIGINT UNSIGNED NOT NULL DEFAULT 0,
   UNIQUE (`user_id`, `book_id`),
   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`) ON DELETE CASCADE,
   FOREIGN KEY (`book_id`) REFERENCES `book`(`book_id`) ON DELETE CASCADE
