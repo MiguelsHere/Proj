@@ -6,18 +6,18 @@ class UserController
     private $db;
     private $user;
 
-    public function __construct($db)
-    {
-        $this->db = $db;
-        $this->user = new User($this->db);
-    }
-
     private function is_logged_in(): bool
     {
         if (!empty($_SESSION['user_id'])) {
             return true;
         }
         return false;
+    }
+
+    public function __construct($db)
+    {
+        $this->db = $db;
+        $this->user = new User($this->db);
     }
 
     public function register()
@@ -73,6 +73,14 @@ class UserController
 
             if ($_POST) {
                 $this->user->profile_update_info($_POST['user_description'], $_POST['birth'], $_POST['public']);
+                if ($_POST['password']) {
+                    if ($_POST['email']) {
+                        $this->user->profile_update_email($_POST['email'], $_POST['password']);
+                    }
+                    if ($_POST['new_password']) {
+                        $this->user->profile_update_password($_POST['new_password'], $_POST['password']);
+                    }
+                }
 
                 header("Location: index.php?action=profile");
                 exit;
@@ -80,7 +88,7 @@ class UserController
         } else {
             $info = $this->user->profile_get_info($name);
         }
-        
+
         include 'Views/User/profile.php';
     }
 }
