@@ -11,7 +11,7 @@ class Book
 
     function insert_book(): bool {}
 
-    function fetch_books(): bool {}
+    function fetch_books() {}
 
     function delete_book(): bool {}
 
