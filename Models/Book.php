@@ -11,9 +11,21 @@ class Book
         $this->conn = $db;
     }
 
-    function insert_book(): bool
+    function insert_book(int $isbn, string $title, string $publisher, string $genre, string $author, string $descriptionn): bool
     {
         try {
+            $query = "INSERT INTO book(ISBN, title, publisher, genre, author,book_description) VALUES(:ISBN, :title, :publisher, :genre, :author,:book_description)";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(":ISBN", $isbn);
+            $stmt->bindParam(":title", $title);
+            $stmt->bindParam(":publisher", $publisher);
+            $stmt->bindParam(":genre", $genre);
+            $stmt->bindParam(":author", $author);
+            $stmt->bindParam(":book_description", $descriptionn);
+
+            $stmt->execute();
         } catch (PDOException $e) {
 
             print($e->getMessage());
@@ -27,9 +39,11 @@ class Book
     function fetch_books()
     {
         try {
-            $query = "";
+            $query = "SELECT ISBN, title, publisher, genre, author, book_description FROM book";
 
             $stmt = $this->conn->prepare($query);
+
+            $stmt->execute();
         } catch (PDOException $e) {
 
             print($e->getMessage());
@@ -40,9 +54,16 @@ class Book
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function delete_book(): bool
+    function delete_book(int $id): bool
     {
         try {
+            $query = "DELETE FROM book WHERE book_id = :book_id";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(":book_id", $id);
+
+            $stmt->execute();
         } catch (PDOException $e) {
 
             print($e->getMessage());
