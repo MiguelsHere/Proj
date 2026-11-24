@@ -8,4 +8,12 @@ class Book
     {
         $this->conn = $db;
     }
+
+    function insert_book(): bool {}
+
+    function fetch_books(): bool {}
+
+    function delete_book(): bool {}
+
+    function update_book(): bool {}
 }
