@@ -13,10 +13,10 @@
 
     <form action="index.php?action=login" method="post">
 
-        <label>Email:</label>
+        <label for="email">Email:</label>
         <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>
 
-        <label>Palavra-passe:</label>
+        <label for="email">Palavra-passe:</label>
         <input type="password" autocomplete="current-password" minlength="8" id=password name=password required>
 
         <button type="submit">Entrar</button>

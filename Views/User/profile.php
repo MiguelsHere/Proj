@@ -13,13 +13,13 @@
 
     <form action="index.php?action=profile" method="post">
 
-        <label>Description:</label>
+        <label for="user_description">Description:</label>
         <textarea id="user_description" name="user_description"></textarea>
 
-        <label>Birth date:</label>
+        <label for="birth">Birth date:</label>
         <input type="date" autocomplete="bday" id="birth" name="birth">
 
-        <label>
+        <label for="public">
             <input type="checkbox" id="public" name="public">
             <span>Perfil Publico</span>
         </label>

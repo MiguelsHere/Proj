@@ -13,13 +13,13 @@
 
     <form action="index.php?action=register" method="post">
 
-        <label>Nome de Utilizador:</label>
+        <label for="username">Nome de Utilizador:</label>
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required>
 
-        <label>Email:</label>
+        <label for="email">Email:</label>
         <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>
 
-        <label>Palavra-passe:</label>
+        <label for="password">Palavra-passe:</label>
         <input type="password" autocomplete="new-password" minlength="8" id=password name=password required>
 
         <label>Confirmar Palava-passe</label>
