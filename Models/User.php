@@ -61,7 +61,7 @@ class User
     function login(string $email, string $password): bool
     {
         try {
-            $query = "SELECT user_id, user_name, email, password_hash FROM user WHERE email = :email;";
+            $query = "SELECT user_id, user_name, email, password_hash, is_mod FROM user WHERE email = :email;";
 
             $stmt = $this->conn->prepare($query);
 
@@ -76,6 +76,7 @@ class User
                 $_SESSION = [];
                 $_SESSION['user_id']   = (int) $row['user_id'];
                 $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['is_mod'] = (bool) $row['is_mod'];
             } else {
                 $_SESSION['alert'] = "Erro a entrar na conta. Tente novamente.";
                 return false;
@@ -119,7 +120,7 @@ class User
     function profile_get_info_self()
     {
         try {
-            $query = "SELECT user_name, email, user_description, birth_date, is_public, can_review FROM user WHERE user_id = :user_id";
+            $query = "SELECT user_name, email, user_description, birth_date, is_public, can_review, is_mod FROM user WHERE user_id = :user_id";
 
             $stmt = $this->conn->prepare($query);
 
