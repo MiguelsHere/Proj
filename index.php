@@ -18,6 +18,9 @@ $action = $_GET['action'] ?? "home";
 $name = $_GET['user_name'] ?? $_SESSION['user_name'];
 
 switch ($action) {
+    case "books":
+        $bookController->fetch_books();
+        break;
     case "profile":
         $userController->profile($name);
         break;

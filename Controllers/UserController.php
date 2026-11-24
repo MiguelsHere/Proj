@@ -91,4 +91,7 @@ class UserController
 
         include 'Views/User/profile.php';
     }
+
+    #   TO-DO Fazer mod tirar privilegios de review
+
 }
