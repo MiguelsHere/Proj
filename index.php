@@ -15,7 +15,7 @@ $bookController = new BookController($db);
 $shelfController = new ShelfController($db);
 
 $action = $_GET['action'] ?? "home";
-$name = $_GET['user_name'] ?? "?";
+$name = $_GET['user_name'] ?? $_SESSION['user_name'];
 
 switch ($action) {
     case "profile":
