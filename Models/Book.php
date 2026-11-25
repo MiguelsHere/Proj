@@ -40,9 +40,11 @@ class Book
     function insert_book(int $isbn, string $title, string $publisher, string $genre, string $author, string $descriptionn): bool
     {
         try {
+
             if (!$this->is_mod()) {
                 return false;
             }
+            
             $query = "INSERT INTO book(ISBN, title, publisher, genre, author,book_description) VALUES(:ISBN, :title, :publisher, :genre, :author,:book_description)";
 
             $stmt = $this->conn->prepare($query);
@@ -87,9 +89,11 @@ class Book
     function delete_book(int $id): bool
     {
         try {
+
             if (!$this->is_mod()) {
                 return false;
             }
+
             $query = "DELETE FROM book WHERE book_id = :book_id";
 
             $stmt = $this->conn->prepare($query);
@@ -111,6 +115,7 @@ class Book
     function update_book(): bool
     {
         try {
+
             if (!$this->is_mod()) {
                 return false;
             }

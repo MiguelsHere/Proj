@@ -34,6 +34,8 @@ nav a:visited {
 }
 
 footer {
+  padding-top: 4px;
+  padding-bottom: 4px;
   width: 100%;
   text-align: center;
   background-color: grey;
@@ -60,6 +62,9 @@ footer a:visited {
   margin-right: 20px;
 }
 
+.book {
+  color: blueviolet;
+}
 
 #sitenav {
   margin-left: 200px;
