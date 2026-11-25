@@ -52,15 +52,13 @@ class User
                 return false;
             }
 
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-
             $query = "INSERT INTO user(user_name, email, password_hash) VALUES(:user_name, :email, :password_hash)";
 
             $stmt = $this->conn->prepare($query);
 
             $stmt->bindParam(":user_name", $userName);
             $stmt->bindParam(":email", $email);
-            $stmt->bindParam(":password_hash", $hash);
+            $stmt->bindParam(":password_hash", password_hash($password, PASSWORD_DEFAULT));
 
             $stmt->execute();
         } catch (PDOException $e) {
