@@ -29,6 +29,28 @@ class User
         return true;
     }
 
+    private function is_user_name_invalid(string $userName): bool
+    {
+        $size = strlen($userName);
+
+        if ($size > 50 || $size < 3) {
+            $_SESSION['alert'] = "O utiliza tem de ter entre 3 a 50 carateres!";
+            return true;
+        }
+
+        return false;
+    }
+
+    private function is_password_invalid(string $password): bool
+    {
+        if (strlen($password) < 8) {
+            $_SESSION['alert'] = "A password tem de ter pelo menos 8 carateres!";
+            return true;
+        }
+
+        return false;
+    }
+
     public function __construct($db)
     {
         $this->conn = $db;
@@ -37,14 +59,7 @@ class User
     function register(string $userName, string $email, string $password): bool
     {
         try {
-            $size = strlen($userName);
-
-            if ($size > 50 || $size < 3) {
-                $_SESSION['alert'] = "O utiliza tem de ter entre 3 a 50 carateres!";
-                return false;
-            }
-            if (strlen($password) < 8) {
-                $_SESSION['alert'] = "A password tem de ter pelo menos 8 carateres!";
+            if ($this->is_user_name_invalid($userName) || $this->is_password_invalid($password)) {
                 return false;
             }
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -149,9 +164,13 @@ class User
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    function profile_update_info(string $description, string $birth, bool $public): bool
+    function profile_update_info(string $userName, string $description, string $birth, bool $public): bool
     {
         try {
+
+            if ($this->is_user_name_invalid($userName)) {
+                return false;
+            }
 
             $query = "UPDATE user SET user_description = :user_description, birth_date = :birth_date, is_public = :is_public WHERE user_id = :user_id";
 
@@ -179,6 +198,12 @@ class User
             if (!$this->password_check($password)) {
                 return false;
             }
+
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $_SESSION['alert'] = "Email inválido!";
+                return false;
+            }
+
             $query = "UPDATE user SET email = :email WHERE user_id = :user_id";
 
             $stmt = $this->conn->prepare($query);
@@ -201,6 +226,10 @@ class User
     {
         try {
             if (!$this->password_check($password)) {
+                return false;
+            }
+
+            if ($this->is_password_invalid($newpassword)) {
                 return false;
             }
 

@@ -13,6 +13,9 @@
 
     <form action="index.php?action=profile" method="post" class="content">
 
+        <label for="username">Nome de Utilizador:</label>
+        <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required><br>
+
         <label for="user_description">Description:</label>
         <textarea id="user_description" name="user_description"></textarea>
 
