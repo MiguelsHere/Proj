@@ -76,7 +76,7 @@ class UserController
             $info = $this->user->profile_get_info_self();
 
             if ($_POST) {
-                $this->user->profile_update_info($_POST['user_description'], $_POST['birth'], $_POST['public']);
+                $this->user->profile_update_info($_POST['username'],$_POST['user_description'], $_POST['birth'], $_POST['public']);
                 if ($_POST['password']) {
                     if ($_POST['email']) {
                         $this->user->profile_update_email($_POST['email'], $_POST['password']);
