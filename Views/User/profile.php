@@ -17,15 +17,15 @@
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required><br>
 
         <label for="user_description">Description:</label>
-        <textarea id="user_description" name="user_description"></textarea>
+        <textarea id="user_description" name="user_description"></textarea><br>
 
-        <label for="birth">Birth date:</label>
-        <input type="date" autocomplete="bday" id="birth" name="birth">
+        <label for="birth">Data de nascimento:</label>
+        <input type="date" autocomplete="bday" id="birth" name="birth"><br>
 
         <label for="public">
             <input type="checkbox" id="public" name="public">
             <span>Perfil Publico</span>
-        </label>
+        </label><br>
 
         <button type="submit">Atualizar</button>
     </form>

@@ -17,7 +17,7 @@
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required><br>
 
         <label for="email">Email:</label>
-        <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>
+        <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required><br>
 
         <label for="password">Palavra-passe:</label>
         <input type="password" autocomplete="new-password" minlength="8" id=password name=password required><br>
