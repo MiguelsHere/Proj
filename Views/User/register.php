@@ -14,21 +14,21 @@
     <form action="index.php?action=register" method="post" class="content">
 
         <label for="username">Nome de Utilizador:</label>
-        <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required>
+        <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required><br>
 
         <label for="email">Email:</label>
         <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>
 
         <label for="password">Palavra-passe:</label>
-        <input type="password" autocomplete="new-password" minlength="8" id=password name=password required>
+        <input type="password" autocomplete="new-password" minlength="8" id=password name=password required><br>
 
         <label>Confirmar Palava-passe</label>
-        <input type="password" minlength="8" required>
+        <input type="password" minlength="8" required><br>
 
         <label>
             <input type="checkbox" id="agreement" name="agreement" required>
             <span>Li e aceito a <a href="TO-DO" target="_blank">política de privacidade</a>.</span>
-        </label>
+        </label><br>
 
         <button type="submit">Registar</button>
 
