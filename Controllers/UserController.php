@@ -68,6 +68,10 @@ class UserController
 
     public function profile(string $name)
     {
+        if ($name == "none") {
+            header("Location: index.php");
+            exit;
+        }
         if ($name == $_SESSION['user_name']) {
             $info = $this->user->profile_get_info_self();
 
@@ -92,6 +96,6 @@ class UserController
         include 'Views/User/profile.php';
     }
 
-    #   TO-DO Fazer mod tirar privilegios de review
+    #   TO-DO Fazer mod tirar privilegios de review e apagar própria conta
 
 }

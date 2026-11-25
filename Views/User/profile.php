@@ -11,7 +11,7 @@
 
     <?php require_once 'Views/Common/alert.php' ?>
 
-    <form action="index.php?action=profile" method="post">
+    <form action="index.php?action=profile" method="post" class="content">
 
         <label for="user_description">Description:</label>
         <textarea id="user_description" name="user_description"></textarea>

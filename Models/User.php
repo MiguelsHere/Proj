@@ -37,6 +37,21 @@ class User
     function register(string $userName, string $email, string $password): bool
     {
         try {
+            $size = strlen($userName);
+
+            if ($size > 50 || $size < 3) {
+                $_SESSION['alert'] = "O utiliza tem de ter entre 3 a 50 carateres!";
+                return false;
+            }
+            if (strlen($password) < 8) {
+                $_SESSION['alert'] = "A password tem de ter pelo menos 8 carateres!";
+                return false;
+            }
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $_SESSION['alert'] = "Email inválido!";
+                return false;
+            }
+
             $hash = password_hash($password, PASSWORD_DEFAULT);
 
             $query = "INSERT INTO user(user_name, email, password_hash) VALUES(:user_name, :email, :password_hash)";

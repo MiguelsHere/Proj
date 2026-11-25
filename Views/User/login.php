@@ -11,7 +11,7 @@
 
     <?php require_once 'Views/Common/alert.php' ?>
 
-    <form action="index.php?action=login" method="post">
+    <form action="index.php?action=login" method="post" class="content">
 
         <label for="email">Email:</label>
         <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required>

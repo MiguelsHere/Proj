@@ -11,7 +11,7 @@
 
     <?php require_once 'Views/Common/alert.php' ?>
 
-    <form action="index.php?action=register" method="post">
+    <form action="index.php?action=register" method="post" class="content">
 
         <label for="username">Nome de Utilizador:</label>
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required>
