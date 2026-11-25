@@ -19,10 +19,9 @@ nav div {
   display: flex;
   justify-content: space-between;
   gap: 10px;
-
 }
 
-#sitenav{
+#sitenav {
   margin-left: 200px;
   margin-right: 100px;
 }
@@ -36,21 +35,28 @@ nav h1 {
   margin-left: 10px;
 }
 
-a {
-  text-decoration: none; 
+nav a {
+  text-decoration: none;
 }
-a:visited {
+
+nav a:visited {
   color: black;
 }
 
 footer {
-  display: flex;
-  justify-content: space-around;
   width: 100%;
   text-align: center;
   background-color: grey;
   position: absolute;
   bottom: 0;
+}
+
+footer a {
+  color: greenyellow;
+}
+
+footer a:visited {
+  color: yellowgreen;
 }
 
 .alert {
