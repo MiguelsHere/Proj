@@ -16,7 +16,7 @@
         <label for="username">Nome de Utilizador:</label>
         <input type="text" autocomplete="username" placeholder="ex. IloveFantasia" minlength="3" maxlength="50" id="username" name="username" required><br>
 
-        <label for="user_description">Description:</label>
+        <label for="user_description">Descrição:</label>
         <textarea id="user_description" name="user_description"></textarea><br>
 
         <label for="birth">Data de nascimento:</label>
