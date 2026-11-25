@@ -21,16 +21,6 @@ nav div {
   gap: 10px;
 }
 
-#sitenav {
-  margin-left: 200px;
-  margin-right: 100px;
-}
-
-#usernav {
-  margin-left: 200px;
-  margin-right: 10px;
-}
-
 nav h1 {
   margin-left: 10px;
 }
@@ -59,6 +49,7 @@ footer a:visited {
   color: yellowgreen;
 }
 
+
 .alert {
   color: red;
 }
@@ -67,4 +58,15 @@ footer a:visited {
   margin-top: 15px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+
+#sitenav {
+  margin-left: 200px;
+  margin-right: 100px;
+}
+
+#usernav {
+  margin-left: 200px;
+  margin-right: 10px;
 }
