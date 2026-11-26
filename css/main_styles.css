@@ -61,8 +61,17 @@ footer a:visited {
   margin-right: 20px;
 }
 
+.show {
+  display: flex;
+  justify-content: space-between;
+}
+
 .book {
+  display: flex;
   color: blueviolet;
+  border-style: groove;
+  border-width: 3px;
+  border-radius: 4px;
 }
 
 #sitenav {
