@@ -1,2 +1,35 @@
 Regex
     pattern="\S+"
+
+SQL
+    genres
+    SET(
+  'Horror', 'Action', 'Adventure', 'Fantasy', 'Science Fiction',
+  'Mystery', 'Thriller', 'Crime', 'Romance', 'Drama',
+  'Comedy', 'Satire', 'Historical Fiction', 'War', 'Western',
+  'Dystopian', 'Young Adult', 'Children', 'Poetry', 'Biography',
+  'Autobiography', 'Memoir', 'Non-Fiction', 'Self-Help', 'Philosophy',
+  'Psychology', 'Religion', 'Mythology', 'Fairy Tale', 'Folklore',
+  'Magical Realism', 'Urban Fantasy', 'Paranormal', 'Steampunk', 'Cyberpunk',
+  'Space Opera', 'Graphic Novel', 'Coming of Age', 'Family', 'Legal',
+  'Medical', 'Political', 'Espionage', 'Sports', 'Travel',
+  'Cooking', 'Art', 'Music', 'Science', 'Technology',
+  'Business', 'Education', 'Reference', 'Epic', 'Tragedy')
+    Criar "books" inicias
+
+        INSERT INTO `book` (`ISBN`, `title`, `publisher`, `genre`, `author`, `book_description`) VALUES
+('9780316769488', 'The Silent Orchard',        'Northwind Press',      'Horror,Thriller',                    'Marina Cole',      'A family inherits a decaying orchard where the trees remember every death that happened beneath them.'),
+('9780441013593', 'Steel Horizon',              'Orbit Books',          'Action,Science Fiction',             'D. R. Vance',      'A disgraced pilot must defend a mining colony from a corporate armada using a stolen prototype ship.'),
+('9780553380163', 'The Cartographer''s Debt',   'Pen & Compass',        'Adventure,Historical Fiction',       'Inês Duarte',      'Two rival mapmakers race across 16th-century Asia to chart a route no one has survived.'),
+('9781590302255', 'Ember & Ash',                'Silverleaf House',     'Fantasy,Epic',                       'Tobias Wren',      'The last fire-mage of a fallen kingdom bargains with the god who burned it.'),
+('9780062316097', 'The Hollow Notebook',        'Kestrel & Co.',        'Mystery,Crime',                      'A. J. Ferreira',   'A detective reconstructs a murder from the margin notes of a notebook its victim never owned.'),
+('9780143127741', 'Letters to a Quiet Sea',     'Blue Harbor Press',    'Romance,Drama',                      'Cecília Marques',  'Two strangers exchange letters through a lighthouse mailbox for seven years without meeting.'),
+('9780679783268', 'The Last Human Garden',      'Verdant Books',        'Dystopian,Science Fiction',          'Kai Nomura',       'In a world where plants are illegal, a botanist hides a greenhouse beneath a city of concrete.'),
+('9780316055437', 'Small Gods of the Kitchen',  'Hearth & Table',       'Magical Realism,Family',             'Rosa Beltrán',     'Three generations of women run a restaurant where every dish grants a wish — with a price.'),
+('9780307887894', 'The Gravity Between Us',     'Stellar Editions',     'Space Opera,Adventure',              'Ilya Petrov',      'A salvage crew finds a derelict ship orbiting a star that should not exist.'),
+('9780547928227', 'Hollow Creek',               'Blackpine Books',      'Horror,Mystery,Paranormal',          'Nora Kessler',     'Every autumn, one child in Hollow Creek disappears — and the town insists it never happened.'),
+('9781501139154', 'The Quiet Discipline',       'Foundry Press',        'Self-Help,Psychology',               'Adrian Mensah',    'A practical framework for building habits that survive bad weeks, not just good ones.'),
+('9780399588174', 'Code of the Wandering Monk', 'Iron Lotus Publishing','Philosophy,Non-Fiction',             'Hana Oduya',       'A former engineer traces the stoic and monastic roots of modern resilience training.'),
+('9781984822185', 'The Cartel of Small Cities', 'Meridian Works',       'Political,Thriller,Espionage',       'Luis Arriaga',     'A mid-level bureaucrat stumbles onto a scheme that quietly reshapes entire municipal economies.'),
+('9780316769174', 'Paper Lanterns',             'Willow & Ink',         'Coming of Age,Young Adult',          'Mira Tanaka',      'A shy student and a rebellious classmate spend one summer restoring a forgotten festival.'),
+('9780064400558', 'The Boy Who Bottled Thunder', 'Little Compass',      'Children,Fairy Tale',                'Ewan MacLeod',     'A young boy captures a storm in a jar and must return it before the valley dries up.');
