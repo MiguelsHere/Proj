@@ -62,17 +62,20 @@ footer a:visited {
 }
 
 .show {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
 }
 
 .book {
   display: flex;
   flex-direction: column;
+  text-align: center;
   color: blueviolet;
   border-style: groove;
   border-width: 3px;
   border-radius: 4px;
+  gap: 6px;
 }
 
 #sitenav {

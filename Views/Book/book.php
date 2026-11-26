@@ -10,21 +10,23 @@
     <?php require_once 'Views/Common/nav.php' ?>
 
     <main class="content">
-        <?php if (empty($books)): ?>
-            <h2>Ainda não há livros.</h3>
-            <?php else: ?>
-                <?php foreach ($books as $book): ?>
-                    <div class="book">
-                        <a href="">
-                            <h3><?= htmlspecialchars($book['title']) ?></h4>
-                        </a>
-                        <h4><?= htmlspecialchars($book['author']) ?></h4>
-                        <h4><?= htmlspecialchars($book['genre']) ?></h4>
-                        <h5><?= htmlspecialchars($book['publisher']) ?></h5>
-                        <h6><?= htmlspecialchars($book['ISBN']) ?></h6>
-                    </div>
-                <?php endforeach ?>
-            <?php endif ?>
+        <div class="show">
+            <?php if (empty($books)): ?>
+                <h2>Ainda não há livros.</h3>
+                <?php else: ?>
+                    <?php foreach ($books as $book): ?>
+                        <div class="book">
+                            <a href="">
+                                <h3><?= htmlspecialchars($book['title']) ?></h4>
+                            </a>
+                            <h4><?= htmlspecialchars($book['author']) ?></h4>
+                            <h4><?= htmlspecialchars($book['genre']) ?></h4>
+                            <h5><?= htmlspecialchars($book['publisher']) ?></h5>
+                            <h6><?= htmlspecialchars($book['ISBN']) ?></h6>
+                        </div>
+                    <?php endforeach ?>
+                <?php endif ?>
+        </div>
     </main>
     <?php require_once 'Views/Common/footer.php' ?>
 </body>
