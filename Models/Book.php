@@ -1,36 +1,9 @@
 <?php
+include_once 'Common.php';
 
 class Book
 {
     private $conn;
-
-    private function is_mod(): bool
-    {
-        if (!($_SESSION['is_mod'])) {
-            return false;
-        }
-
-        try {
-            $query = "SELECT is_mod FROM user WHERE user_id = :user_id";
-
-            $stmt = $this->conn->prepare($query);
-
-            $stmt->bindParam(":user_id", $_SESSION['user_id']);
-
-            $stmt->execute();
-
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($row && $row['is_mod'] == 1) {
-                return true;
-            }
-        } catch (PDOException $e) {
-            print($e->getMessage());
-            $_SESSION['alert'] = "Erro, tente novamente.";
-            return false;
-        }
-        return false;
-    }
 
     public function __construct($db)
     {
@@ -41,7 +14,7 @@ class Book
     {
         try {
 
-            if (!$this->is_mod()) {
+            if (!Common::is_mod($this->conn)) {
                 return false;
             }
             
@@ -90,7 +63,7 @@ class Book
     {
         try {
 
-            if (!$this->is_mod()) {
+            if (!Common::is_mod($this->conn)) {
                 return false;
             }
 
@@ -116,7 +89,7 @@ class Book
     {
         try {
 
-            if (!$this->is_mod()) {
+            if (!Common::is_mod($this->conn)) {
                 return false;
             }
         } catch (PDOException $e) {
