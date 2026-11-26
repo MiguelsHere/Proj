@@ -16,7 +16,18 @@ CREATE TABLE `book` (
   `ISBN` VARCHAR(13) NOT NULL,
   `title` VARCHAR(100) NOT NULL,
   `publisher` VARCHAR(100) NOT NULL,
-  `genre` set('Horror', 'Action', 'Adventure') NOT NULL,
+  `genre` SET(
+  'Horror', 'Action', 'Adventure', 'Fantasy', 'Science Fiction',
+  'Mystery', 'Thriller', 'Crime', 'Romance', 'Drama',
+  'Comedy', 'Satire', 'Historical Fiction', 'War', 'Western',
+  'Dystopian', 'Young Adult', 'Children', 'Poetry', 'Biography',
+  'Autobiography', 'Memoir', 'Non-Fiction', 'Self-Help', 'Philosophy',
+  'Psychology', 'Religion', 'Mythology', 'Fairy Tale', 'Folklore',
+  'Magical Realism', 'Urban Fantasy', 'Paranormal', 'Steampunk', 'Cyberpunk',
+  'Space Opera', 'Graphic Novel', 'Coming of Age', 'Family', 'Legal',
+  'Medical', 'Political', 'Espionage', 'Sports', 'Travel',
+  'Cooking', 'Art', 'Music', 'Science', 'Technology',
+  'Business', 'Education', 'Reference', 'Epic', 'Tragedy') NOT NULL,
   `author` VARCHAR(100) DEFAULT "Desconhecido",
   `book_description` TEXT
 );
