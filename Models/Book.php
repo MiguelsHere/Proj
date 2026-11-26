@@ -17,7 +17,7 @@ class Book
             if (!Common::is_mod($this->conn)) {
                 return false;
             }
-            
+
             $query = "INSERT INTO book(ISBN, title, publisher, genre, author,book_description) VALUES(:ISBN, :title, :publisher, :genre, :author,:book_description)";
 
             $stmt = $this->conn->prepare($query);
@@ -56,7 +56,7 @@ class Book
             return false;
         }
 
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     function delete_book(int $id): bool
