@@ -130,7 +130,7 @@ class User
     {
         try {
 
-            $query = "SELECT user_name, user_description, birth_date, is_mod FROM user WHERE user_name = :user_name, created_in and is_public = 1";
+            $query = "SELECT user_name, user_description, birth_date, is_mod, created_in FROM user WHERE user_name = :user_name and is_public = 1";
 
             $stmt = $this->conn->prepare($query);
 
