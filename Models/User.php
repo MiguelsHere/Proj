@@ -31,10 +31,10 @@ class User
 
     private function is_user_name_invalid(string $userName): bool
     {
-        $size = strlen($userName);
+        $size = mb_strlen($userName);
 
         if ($size > 50 || $size < 3) {
-            $_SESSION['alert'] = "O utiliza tem de ter entre 3 a 50 carateres!";
+            $_SESSION['alert'] = "O nome de utilizador tem de ter entre 3 a 50 carateres!";
             return true;
         }
 
@@ -43,7 +43,7 @@ class User
 
     private function is_password_invalid(string $password): bool
     {
-        if (strlen($password) < 8) {
+        if (mb_strlen($password) < 8) {
             $_SESSION['alert'] = "A password tem de ter pelo menos 8 carateres!";
             return true;
         }
@@ -129,7 +129,7 @@ class User
     {
         try {
 
-            $query = "SELECT user_name, user_description, birth_date, is_mod FROM user WHERE user_name = :user_name and is_public = 1";
+            $query = "SELECT user_name, user_description, birth_date, is_mod FROM user WHERE user_name = :user_name, created_in and is_public = 1";
 
             $stmt = $this->conn->prepare($query);
 
@@ -148,7 +148,7 @@ class User
     function profile_get_info_self()
     {
         try {
-            $query = "SELECT user_name, email, user_description, birth_date, is_public, can_review, is_mod FROM user WHERE user_id = :user_id";
+            $query = "SELECT user_name, email, user_description, birth_date, is_public, can_review, is_mod, created_in FROM user WHERE user_id = :user_id";
 
             $stmt = $this->conn->prepare($query);
 
@@ -172,10 +172,11 @@ class User
                 return false;
             }
 
-            $query = "UPDATE user SET user_description = :user_description, birth_date = :birth_date, is_public = :is_public WHERE user_id = :user_id";
+            $query = "UPDATE user SET user_name = :user_name, user_description = :user_description, birth_date = :birth_date, is_public = :is_public WHERE user_id = :user_id";
 
             $stmt = $this->conn->prepare($query);
 
+            $stmt->bindParam(":user_name", $userName);
             $stmt->bindParam(":user_description", $description);
             $stmt->bindParam(":birth_date", $birth);
             $stmt->bindParam(":is_public", $public);
@@ -185,12 +186,14 @@ class User
         } catch (PDOException $e) {
 
             print($e->getMessage());
-            $_SESSION['alert'] = "Erro. Tente novamente.";
+            $_SESSION['alert'] = "Erro. Nome de utilizador já em uso.";
             return false;
         }
 
         return true;
     }
+
+    //testar estes
 
     function profile_update_email(string $email, string $password): bool
     {
