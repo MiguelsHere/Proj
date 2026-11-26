@@ -1,13 +1,14 @@
 CREATE TABLE `user` (
   `user_id` BIGINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-  `user_name` VARCHAR(50) UNIQUE NOT NULL,
+  `user_name` VARCHAR(50) NOT NULL,
   `email` VARCHAR(320) UNIQUE NOT NULL,
   `password_hash` VARCHAR(60) NOT NULL,
   `user_description` TEXT,
   `birth_date` DATE,
   `is_public` boolean NOT NULL DEFAULT 0,
   `can_review` boolean NOT NULL DEFAULT 1,
-  `is_mod` boolean NOT NULL DEFAULT 0
+  `is_mod` boolean NOT NULL DEFAULT 0,
+  `created_in` DATE NOT NULL DEFAULT CURRENT_DATE
 );
 
 CREATE TABLE `book` (
