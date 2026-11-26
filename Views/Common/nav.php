@@ -1,5 +1,5 @@
 <nav>
-    <h1>Bookshelf Review</h1>
+    <h1><a href="index.php">Bookshelf Review</a></h1>
     <div id="sitenav">
         <a href="" title="Ir para pagina de utilizadores">Utilizadores</a>
         <a href="index.php?action=books" title="Ir para a página de livros">Livros</a>

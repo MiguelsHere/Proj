@@ -11,17 +11,19 @@
 
     <?php require_once 'Views/Common/alert.php' ?>
 
-    <form action="index.php?action=login" method="post" class="content">
+    <main class="content">
+        <form action="index.php?action=login" method="post">
 
-        <label for="email">Email:</label>
-        <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required><br>
+            <label for="email">Email:</label>
+            <input type="email" autocomplete="email" placeholder="ex. exemplo@gmail.com" id="email" name="email" required pattern="\S+"><br>
 
-        <label for="email">Palavra-passe:</label>
-        <input type="password" autocomplete="current-password" minlength="8" id=password name=password required><br>
+            <label for="password">Palavra-passe:</label>
+            <input type="password" autocomplete="current-password" minlength="8" id=password name=password required><br>
 
-        <button type="submit">Entrar</button>
+            <button type="submit">Entrar</button>
 
-    </form>
+        </form>
+    </main>
 
     <?php require_once 'Views/Common/footer.php' ?>
 </body>
