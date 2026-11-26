@@ -68,6 +68,7 @@ footer a:visited {
 
 .book {
   display: flex;
+  flex-direction: column;
   color: blueviolet;
   border-style: groove;
   border-width: 3px;

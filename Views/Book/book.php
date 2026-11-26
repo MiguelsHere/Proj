@@ -22,7 +22,6 @@
                         <h4><?= htmlspecialchars($book['genre']) ?></h4>
                         <h5><?= htmlspecialchars($book['publisher']) ?></h5>
                         <h6><?= htmlspecialchars($book['ISBN']) ?></h6>
-
                     </div>
                 <?php endforeach ?>
             <?php endif ?>
